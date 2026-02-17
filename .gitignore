@@ -1,0 +1,8 @@
+# Build artifacts
+MemoryBar
+MemoryBar.app/
+icon_gen
+AppIcon.iconset/
+
+# macOS
+.DS_Store
