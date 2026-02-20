@@ -4,6 +4,28 @@ A lightweight macOS menu bar app that shows real-time memory and CPU usage.
 
 ![macOS](https://img.shields.io/badge/macOS-12%2B-blue) ![Swift](https://img.shields.io/badge/Swift-5-orange) ![Size](https://img.shields.io/badge/size-~90KB-green)
 
+## Install
+
+**Homebrew** (recommended):
+```bash
+brew tap n0xer90/tap
+brew install --cask memorybar
+```
+
+**Manual download:**
+
+Download `MemoryBar.app.zip` from the [latest release](https://github.com/n0xer90/MemoryBar/releases/latest), unzip, and drag to Applications.
+
+> On first launch, macOS may block it since it's unsigned. Right-click the app → **Open** → **Open** to allow it.
+
+**Build from source:**
+```bash
+git clone https://github.com/n0xer90/MemoryBar.git
+cd MemoryBar
+./build.sh
+open MemoryBar.app
+```
+
 ## Features
 
 - **Dual sparkline graphs** in the menu bar (memory + CPU)
@@ -14,39 +36,6 @@ A lightweight macOS menu bar app that shows real-time memory and CPU usage.
 - **Text mode** alternative (`M:77% C:23%`)
 - **Launch at Login** support
 - ~90KB binary, no dependencies, no Electron
-
-## Screenshots
-
-Click the menu bar graphs to open the detail popover:
-
-| Menu Bar | Popover |
-|----------|---------|
-| Two sparkline graphs (memory green, CPU cyan) | Collapsible sections with memory breakdown, CPU, top processes |
-
-## Building
-
-Requires Xcode command line tools on macOS 12+.
-
-```bash
-# Compile
-swiftc -O -o MemoryBar main.swift -framework Cocoa
-
-# Create app bundle
-mkdir -p MemoryBar.app/Contents/MacOS
-mkdir -p MemoryBar.app/Contents/Resources
-cp MemoryBar MemoryBar.app/Contents/MacOS/
-cp Info.plist MemoryBar.app/Contents/
-cp AppIcon.icns MemoryBar.app/Contents/Resources/
-
-# Launch
-open MemoryBar.app
-```
-
-Or use the included build script:
-
-```bash
-./build.sh
-```
 
 ## How It Works
 
